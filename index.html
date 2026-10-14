@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Growth Headquarters AI — sede operacional inteligente para coordenar projetos, agentes especializados e processos empresariais. Local-first, em desenvolvimento." />
+  <title>Growth Headquarters AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Outfit:wght@500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --void: #0d0f13;
+      --graphite: #171a20;
+      --graphite-2: #1f232b;
+      --ink: #f4efe6;
+      --muted: #a3a9b4;
+      --steel: #c9ced8;
+      --line: rgba(255, 255, 255, 0.09);
+      --line-strong: rgba(255, 255, 255, 0.16);
+      --violet: #9d8cff;
+      --ok: #92c7a1;
+      --brass: #d2ad6a;
+      --font: "IBM Plex Sans", "Segoe UI", sans-serif;
+      --display: "Outfit", "Segoe UI", sans-serif;
+      --mono: "Cascadia Mono", Consolas, ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--void);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--violet); text-underline-offset: 3px; }
+    a:hover { color: var(--ink); }
+    :focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; }
+    h1, h2, h3 { font-family: var(--display); font-weight: 560; letter-spacing: -0.03em; margin: 0; }
+    p { margin: 0; }
+    code { font-family: var(--mono); font-size: 0.86em; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    header.top {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(13, 15, 19, 0.88);
+      border-bottom: 1px solid var(--line);
+    }
+    .top-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 64px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+    .mark { width: 10px; height: 28px; border-radius: 99px; background: var(--violet); }
+    .brand b { letter-spacing: 0.18em; font-size: 12px; display: block; }
+    .brand small { color: var(--muted); font-size: 12px; }
+    nav { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 13px; }
+    nav a:hover { color: var(--ink); }
+    .hero { padding: 64px 0 36px; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 40px; align-items: center; }
+    .kicker { color: var(--violet); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px; }
+    h1 { font-size: clamp(36px, 5.4vw, 58px); line-height: 1.04; }
+    .sub { color: var(--ink); font-size: 22px; line-height: 1.3; margin: 16px 0 14px; max-width: 28ch; }
+    .lede { color: var(--muted); max-width: 62ch; font-size: 17px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    .pill { border: 1px solid var(--line-strong); border-radius: 999px; padding: 6px 12px; font-size: 12px; color: var(--steel); }
+    .pill.ok { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 40%, transparent); }
+    .pill.exp { color: var(--violet); border-color: color-mix(in srgb, var(--violet) 45%, transparent); }
+    .pill.warn { color: var(--brass); border-color: color-mix(in srgb, var(--brass) 45%, transparent); }
+    .notice { margin-top: 22px; border: 1px solid var(--line-strong); background: var(--graphite); padding: 14px 16px; border-radius: 12px; color: var(--steel); font-size: 14px; }
+    .notice strong { color: var(--ink); }
+    section { padding: 56px 0; border-top: 1px solid var(--line); }
+    h2 { font-size: 28px; margin-bottom: 12px; }
+    h3 { font-size: 18px; margin-bottom: 8px; }
+    .muted { color: var(--muted); }
+    .grid-2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .grid-6 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .stack { display: grid; gap: 14px; }
+    .card { background: var(--graphite); border: 1px solid var(--line); border-radius: 14px; padding: 18px; min-width: 0; }
+    .card p + p, .card ul { margin-top: 10px; }
+    .card ul { padding-left: 18px; color: var(--steel); }
+    .tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--violet); }
+    .flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .flow .card { text-align: left; }
+    .flow small { display: block; color: var(--muted); margin-top: 6px; }
+    .floor {
+      position: relative; aspect-ratio: 20 / 14;
+      background: #12151b; border: 1px solid var(--line-strong); border-radius: 14px; overflow: hidden;
+    }
+    .room { position: absolute; border: 1px solid var(--line-strong); padding: 10px 12px; background: rgba(157, 140, 255, 0.05); }
+    .room.has-agent { background: rgba(157, 140, 255, 0.16); border-color: color-mix(in srgb, var(--violet) 55%, transparent); }
+    .room small { display: block; color: var(--muted); font-size: 11px; }
+    .research { left: 0; top: 0; width: 55%; height: 54%; }
+    .analysis { left: 55%; top: 0; width: 45%; height: 54%; }
+    .review { left: 0; top: 54%; width: 50%; height: 46%; }
+    .meeting { left: 50%; top: 54%; width: 50%; height: 46%; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { color: var(--muted); font-weight: 500; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .status { font-family: var(--mono); font-size: 12px; white-space: nowrap; }
+    .s-imp { color: var(--ok); }
+    .s-exp { color: var(--violet); }
+    .s-dep { color: var(--brass); }
+    .s-plan { color: var(--muted); }
+    .pitch { border-left: 3px solid var(--violet); padding: 4px 0 4px 18px; color: var(--steel); max-width: 74ch; }
+    footer { padding: 32px 0 48px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+    @media (max-width: 1080px) {
+      .hero, .grid-2, .grid-3, .grid-6, .flow { grid-template-columns: 1fr; }
+      h1 { max-width: none; }
+    }
+    @media (max-width: 720px) { nav { display: none; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="#topo">
+        <span class="mark" aria-hidden="true"></span>
+        <span><b>GH</b><small>Growth Headquarters</small></span>
+      </a>
+      <nav aria-label="Seções">
+        <a href="#visao">Visão</a>
+        <a href="#orquestracao">Arquitetura</a>
+        <a href="#sede">Sede 3D</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#agentes">Agentes</a>
+        <a href="#seguranca">Segurança</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#roadmap">Roadmap</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" id="topo">
+    <div class="hero">
+      <div>
+        <p class="kicker">AI Agent Platform · Multi-Agent Systems · Business Operations</p>
+        <h1>Growth Headquarters AI</h1>
+        <p class="sub">Uma sede operacional inteligente para coordenar projetos, agentes especializados e processos empresariais.</p>
+        <p class="lede">O Growth Headquarters AI é uma plataforma local-first em desenvolvimento que explora uma nova forma de organizar operações empresariais por meio de agentes especializados, ferramentas controladas e uma interface corporativa 3D.</p>
+        <p class="lede" style="margin-top:12px">Sua arquitetura foi projetada para permitir a expansão gradual para diferentes departamentos e áreas de negócio, com segurança, rastreabilidade e supervisão humana.</p>
+        <div class="pills">
+          <span class="pill ok">Em desenvolvimento ativo</span>
+          <span class="pill">Local-first</span>
+          <span class="pill exp">Arquitetura multiagente</span>
+          <span class="pill warn">Persistência em implantação</span>
+        </div>
+      </div>
+      <div>
+        <div class="floor" aria-label="Planta do andar piloto da sede">
+          <div class="room research has-agent"><b>Pesquisa</b><small>posto de agente</small></div>
+          <div class="room analysis"><b>Análise</b><small>sala da sede</small></div>
+          <div class="room review"><b>Revisão humana</b><small>supervisão</small></div>
+          <div class="room meeting"><b>Reunião</b><small>espaço operacional</small></div>
+        </div>
+        <p class="muted" style="margin-top:8px;font-size:12px">Sede 3D — planta do andar piloto, derivada do layout real da interface. Não é uma captura inventada da aplicação em execução.</p>
+      </div>
+    </div>
+    <p class="notice"><strong>Mais do que um assistente conversacional.</strong> O GH busca funcionar como um ambiente operacional estruturado, no qual cada agente possui responsabilidades, permissões e ferramentas específicas. Três especialidades já demonstram essa arquitetura; o produto não se limita a elas.</p>
+
+    <section id="visao">
+      <h2>Visão da sede operacional</h2>
+      <p class="muted" style="margin-bottom:18px">A visão de longo prazo é uma sede que concentra projetos, processos e departamentos. As áreas abaixo são possibilidades de evolução — não módulos já entregues.</p>
+      <div class="grid-6">
+        <article class="card"><p class="tag">visão</p><h3>Projetos e processos</h3><p class="muted">Coordenar trabalho por projeto, com papéis e evidência.</p></article>
+        <article class="card"><p class="tag">visão</p><h3>Pesquisa e inteligência</h3><p class="muted">Consultar fontes autorizadas e registrar hipóteses para revisão.</p></article>
+        <article class="card"><p class="tag">visão</p><h3>Comércio e operações</h3><p class="muted">Catálogo, ofertas e rotinas comerciais sob política de acesso.</p></article>
+        <article class="card"><p class="tag">visão</p><h3>Marketing e tráfego</h3><p class="muted">Uma especialidade possível — não a definição do produto.</p></article>
+        <article class="card"><p class="tag">visão</p><h3>Qualidade de dados</h3><p class="muted">Inspecionar e organizar informações sem publicar sozinho.</p></article>
+        <article class="card"><p class="tag">visão</p><h3>Automação supervisionada</h3><p class="muted">Novos agentes e ferramentas, sempre allowlisted.</p></article>
+      </div>
+    </section>
+
+    <section id="orquestracao">
+      <h2>Arquitetura multiagente e orquestração</h2>
+      <p class="muted" style="margin-bottom:18px">Nenhuma ação parte do modelo sozinho. Política, diretor e ferramenta são camadas distintas no código.</p>
+      <div class="flow">
+        <article class="card"><p class="tag">1</p><h3>Projeto</h3><small>Escopo e grants. O agente só vê o que o papel pode ler.</small></article>
+        <article class="card"><p class="tag">2</p><h3>PolicyEngine</h3><small>Deny-by-default. Concede ou recusa a ação. Audita allow e deny.</small></article>
+        <article class="card"><p class="tag">3</p><h3>Director</h3><small>Orquestra ferramentas da allowlist. Não concede permissões. Não executa código arbitrário.</small></article>
+        <article class="card"><p class="tag">4</p><h3>Agente</h3><small>Especialidade com ferramenta fechada. Hipótese e recomendação exigem pessoa.</small></article>
+      </div>
+    </section>
+
+    <section id="sede">
+      <h2>Interface corporativa 3D</h2>
+      <div class="grid-2">
+        <div class="stack">
+          <p class="muted">A interface representa um andar de sede, não um painel de anúncios. Quatro salas formam o piloto de Produto e Inovação. Só o posto de pesquisa tem agente do registro; as outras figuras são animação de ambiente — o próprio produto avisa que movimento não é inferência.</p>
+          <p class="muted">Navegação da aplicação: Sede, Painel, Operações, especialidades de mesa, RH virtual e Andares. Sem WebGL, a planta 2D preserva as mesmas salas.</p>
+          <p class="muted">Não há captura de tela inventada nesta apresentação. Quando a UI estiver em execução, a sede 3D é o elemento visual principal do produto.</p>
+        </div>
+        <div class="card">
+          <h3>O que a sede comunica</h3>
+          <ul>
+            <li>Operação por espaços e responsabilidades, não por um único chat.</li>
+            <li>Revisão humana como sala do fluxo, não como rodapé.</li>
+            <li>Agentes como postos de trabalho, acoplados a ferramentas.</li>
+            <li>Expansão futura por novos andares e especialidades.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="especialidades">
+      <h2>Projetos, especialidades e ferramentas</h2>
+      <p class="muted" style="margin-bottom:18px">O catálogo reserva seis diretorias e dezenove identificadores de especialidade. A maior parte ainda não tem ferramenta. Isso é o gancho de expansão, não um organograma já staffado.</p>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Diretorias no catálogo</h3>
+          <ul>
+            <li>Comercial e receita</li>
+            <li>Growth e marketing</li>
+            <li>Inteligência e estratégia</li>
+            <li>Dados e performance</li>
+            <li>Tecnologia e operações</li>
+            <li>Segmentação e comunidades</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Ferramentas allowlisted hoje</h3>
+          <ul>
+            <li><code>inspect_catalog</code>, importação e ranking de catálogo</li>
+            <li><code>read_project_brief</code> — corpus autorizado, sem navegação web</li>
+            <li>Análise de CSV de tráfego por regras</li>
+            <li>Rascunho e pedido de aprovação</li>
+            <li>Consulta de conhecimento interno</li>
+          </ul>
+          <p class="muted">O Director não pode inventar uma ferramenta nova em tempo de execução.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="agentes">
+      <h2>Primeiras especialidades operacionais</h2>
+      <p class="muted" style="margin-bottom:18px">Três agentes demonstram a arquitetura. Eles não definem o perímetro do produto. Novas especialidades entram pelo mesmo contrato: registro, política, ferramenta, evidência, supervisão.</p>
+      <div class="grid-3">
+        <article class="card">
+          <p class="tag">spec.07 · demonstração</p>
+          <h3>Product Researcher</h3>
+          <p>Lê o brief sintético do projeto autorizado e devolve fatos com fonte. Hipóteses pedem revisão humana.</p>
+          <p class="muted">Não pesquisa a internet. Não escolhe arquivos. Não executa a recomendação.</p>
+        </article>
+        <article class="card">
+          <p class="tag">spec.10 · demonstração</p>
+          <h3>Catalog Quality</h3>
+          <p>Inspeciona a qualidade estrutural do catálogo. O modelo pode propor; o Director só executa <code>inspect_catalog</code>.</p>
+          <p class="muted">Não altera produtos. Não publica. Recusa objetivos fora de âmbito.</p>
+        </article>
+        <article class="card">
+          <p class="tag">spec.11 · demonstração</p>
+          <h3>Traffic Analyst</h3>
+          <p>Calcula métricas a partir de um CSV do projeto. Nesta versão a interpretação é por regras, não por LLM.</p>
+          <p class="muted">Não altera campanha. Não lê Meta nem Google. É uma especialidade de dados — não o núcleo do GH.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="visao-vs-atual">
+      <h2>Visão do produto vs. funcionalidades atuais</h2>
+      <div class="grid-2">
+        <article class="card">
+          <p class="tag">visão</p>
+          <h3>Plataforma empresarial</h3>
+          <p>Uma sede que pode ganhar departamentos: processos, comércio, pesquisa, automação, relatórios e outras especialidades ainda não escritas. Cada uma nasceria como agente com permissões e ferramentas próprias.</p>
+        </article>
+        <article class="card">
+          <p class="tag">hoje</p>
+          <h3>Núcleo demonstrável</h3>
+          <p>Interface de sede, API, política, diretor, três agentes, CSV de catálogo, ranking determinístico e um caminho experimental de LLM local. Persistência PostgreSQL desenhada, ainda não ligada. Integrações externas recusadas no código.</p>
+        </article>
+      </div>
+      <table style="margin-top:22px">
+        <thead><tr><th>Capacidade</th><th>Estado</th><th>Nota</th></tr></thead>
+        <tbody>
+          <tr><td>React 18, Three.js, sede 3D</td><td class="status s-imp">implementado</td><td>Planta 2D se WebGL faltar</td></tr>
+          <tr><td>FastAPI, PolicyEngine, Director</td><td class="status s-imp">implementado</td><td>Allowlist; deny-by-default</td></tr>
+          <tr><td>spec.07 / spec.10 / spec.11</td><td class="status s-imp">implementado</td><td>Primeiras especialidades</td></tr>
+          <tr><td>CSV de catálogo e tráfego; ranking</td><td class="status s-imp">implementado</td><td>Ranking não é previsão</td></tr>
+          <tr><td>Login loopback</td><td class="status s-exp">experimental</td><td>Não é autenticação de produção</td></tr>
+          <tr><td>Qwen 2.5 7B via llama-server</td><td class="status s-exp">experimental</td><td>Padrão <code>fake</code>, sem inferência</td></tr>
+          <tr><td>PostgreSQL 18, persistência, RLS</td><td class="status s-dep">em implantação</td><td>Pacote escrito; ainda não operacional</td></tr>
+          <tr><td>Novas especialidades de agentes</td><td class="status s-plan">planejado</td><td>Slots no catálogo, sem ferramenta</td></tr>
+          <tr><td>Pesquisa web autorizada</td><td class="status s-plan">planejado</td><td>Não implementada</td></tr>
+          <tr><td>Meta, Google, GA4, OAuth, cofre</td><td class="status s-plan">planejado</td><td>Clientes desligados</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="seguranca">
+      <h2>Segurança e supervisão humana</h2>
+      <div class="grid-3">
+        <article class="card"><h3>Política</h3><p>O PolicyEngine é a única autoridade que concede ações. Produção não tem ator implícito. Auditoria registra allow e deny.</p></article>
+        <article class="card"><h3>Isolamento</h3><p>Projetos só com grant. Agentes recusam injeção, caminhos web e objetivos fora de especialidade. CSV com teto e guarda de fórmulas.</p></article>
+        <article class="card"><h3>Pessoa no fluxo</h3><p>Hipótese e recomendação exigem revisão humana. O Director não publica. Conectores e cofre permanecem recusados até autorização futura.</p></article>
+      </div>
+    </section>
+
+    <section id="tecnologia">
+      <h2>Tecnologias e arquitetura</h2>
+      <p class="muted" style="margin-bottom:18px">Somente o que o repositório usa. Camadas estáveis; persistência ainda em memória.</p>
+      <div class="grid-3">
+        <article class="card"><h3>Interface</h3><p>React 18, TypeScript, Vite, Three.js / React Three Fiber.</p></article>
+        <article class="card"><h3>Backend</h3><p>FastAPI, domínio, aplicação, segurança e infraestrutura separados.</p></article>
+        <article class="card"><h3>Modelo</h3><p>Propositor <code>fake</code> por omissão. llama-server em loopback, Qwen 2.5 7B, experimental.</p></article>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <h2>Roadmap de expansão</h2>
+      <div class="stack">
+        <p class="muted">Marcos seguintes, sem data e sem tratar visão como entrega.</p>
+        <div class="card"><strong>Persistência.</strong> Ativar PostgreSQL 18 e RLS quando houver autorização. Hoje o adaptador durável recusa o arranque.</div>
+        <div class="card"><strong>Isolamento ao vivo.</strong> Provar dois projetos incomunicáveis com RLS ativo. Grants em memória não substituem isso.</div>
+        <div class="card"><strong>Novas especialidades.</strong> Agentes de processo, comércio, relatórios e automação pelo mesmo contrato de ferramenta e política.</div>
+        <div class="card"><strong>Fontes externas, depois.</strong> Pesquisa web autorizada, cofre, OAuth, Meta e Google — desligados até identidade durável existir.</div>
+      </div>
+    </section>
+
+    <section id="demonstracoes">
+      <h2>Demonstrações reais</h2>
+      <p class="muted" style="margin-bottom:18px">O que o código executa hoje, em memória, com política. Nada disto é conta de anúncio nem banco durável.</p>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Na sede</h3>
+          <ul>
+            <li>Andar 3D / planta 2D com posto de agente</li>
+            <li>Pesquisa sobre brief sintético do projeto</li>
+            <li>Inspeção de catálogo via ferramenta única</li>
+            <li>Importação CSV e ranking determinístico</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Fora do recorte atual</h3>
+          <ul>
+            <li>Navegação autônoma na internet</li>
+            <li>LLM analisando CSV de tráfego</li>
+            <li>Meta Business Manager ou Google Ads</li>
+            <li>PostgreSQL operacional</li>
+          </ul>
+        </article>
+      </div>
+      <h3 style="margin-top:28px">Apresentação de 60 segundos</h3>
+      <p class="pitch">O GH é uma sede operacional com agentes, não um chatbot e não uma ferramenta de tráfego pago. A arquitetura — projeto, política, diretor, especialidade — está feita para ganhar departamentos. Hoje três agentes demonstram o contrato: pesquisa em corpus autorizado, qualidade de catálogo e um analista de CSV por regras. Há uma interface 3D de escritório e um LLM local experimental. PostgreSQL está desenhado e ainda não ligado. Integrações de anúncio estão recusadas. O produto é a sede; as especialidades atuais são as primeiras salas.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      Página estática de apresentação. Sem API, sem credenciais, sem dados internos. Backend 1.5.3 · UI 1.4.0. O GH não é uma plataforma exclusiva de marketing digital.
+    </div>
+  </footer>
+</body>
+</html>
