@@ -1,33 +1,19 @@
 # Growth Headquarters AI
 
-**Sede operacional inteligente para coordenar projetos, agentes especializados e processos empresariais.**
+Sede operacional inteligente para coordenar projetos, agentes especializados e processos empresariais.
 
-O GH é uma plataforma **local-first**, em desenvolvimento, baseada em arquitetura multiagente, ferramentas autorizadas e uma interface corporativa 3D.
+O GH é uma plataforma local-first em desenvolvimento. Organiza o trabalho em especialidades com permissões e ferramentas próprias, com política deny-by-default e revisão humana.
 
-Não é um chatbot. Não é uma ferramenta exclusiva de marketing digital ou tráfego pago. Marketing e tráfego são especialidades possíveis — as primeiras salas de uma sede que pode expandir para outras áreas de operação.
+Não é um chatbot. Não é uma ferramenta exclusiva de marketing ou tráfego pago. Os três agentes atuais demonstram a arquitetura e não limitam o produto.
 
-## Visão vs. o que existe hoje
+## O que esta página mostra
 
-A **visão** é uma sede empresarial com departamentos (projetos, pesquisa, comércio, qualidade de dados, relatórios, automação) cada um como agente com permissões e ferramentas próprias.
+A sede 3D, o fluxo projeto, PolicyEngine, Director e agente, as especialidades spec.07, spec.10 e spec.11, o uso experimental do Qwen 2.5 7B (padrão `fake`, sem inferência) e o que já funciona.
 
-O **núcleo atual** demonstra esse contrato com três especialidades, PolicyEngine deny-by-default e um Director allowlisted. PostgreSQL 18 está desenhado e ainda **não operacional**. Meta, Google e OAuth permanecem desligados no código.
+O Traffic Analyst usa regras sobre CSV. Não usa LLM. Nenhum agente pesquisa a internet sozinho. PostgreSQL 18 e RLS estão em implantação. Meta, Google, OAuth e cofre estão planejados.
 
-## Primeiras especialidades (demonstração)
+## Código
 
-| Agente | Papel | Limite |
-| --- | --- | --- |
-| spec.07 Product Researcher | Brief sintético do projeto | Não pesquisa a internet |
-| spec.10 Catalog Quality | Inspeção estrutural de catálogo | Não altera nem publica produtos |
-| spec.11 Traffic Analyst | Métricas de CSV por regras | Não usa LLM; não lê Meta/Google |
+Este repositório é só a apresentação. O código-fonte principal é privado.
 
-## Estado
-
-**Implementado:** React 18, Three.js, FastAPI, PolicyEngine, Director, os três agentes, CSV, ranking determinístico.
-
-**Experimental:** login loopback; Qwen 2.5 7B via llama-server (padrão `fake`).
-
-**Em implantação:** PostgreSQL 18 e RLS.
-
-**Planejado:** novas especialidades, pesquisa web autorizada, Meta/Google/GA4, OAuth, cofre.
-
-Esta página é só a apresentação estática. O código-fonte permanece em repositório privado.
+Site: https://enzoaguiar13.github.io/growth-headquarters-ai-portfolio/
