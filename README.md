@@ -1,19 +1,24 @@
-# Growth Headquarters AI
+# Project Showcase
 
-Sede operacional inteligente para coordenar projetos, agentes especializados e processos empresariais.
+Apresentações técnicas de produtos desenvolvidos por **Enzo Aguiar**. Os repositórios de código dos produtos permanecem privados por motivos comerciais, operacionais e de segurança.
 
-O GH é uma plataforma local-first em desenvolvimento. Organiza o trabalho em especialidades com permissões e ferramentas próprias, com política deny-by-default e revisão humana.
+## Projetos selecionados
 
-Não é um chatbot. Não é uma ferramenta exclusiva de marketing ou tráfego pago. Os três agentes atuais demonstram a arquitetura e não limitam o produto.
+| Projeto | Contexto | Página |
+| --- | --- | --- |
+| Concurso+ | Preparação para concursos | [Ver apresentação](projects/concurso-plus.md) |
+| GH AI | Coordenação segura de agentes | [Ver apresentação](projects/gh-ai.md) |
+| Affiliate Platform | Automação de operações de afiliados | [Ver apresentação](projects/affiliate-platform.md) |
+| Fotograma AI | Plataforma própria de imagem e vídeo | [Ver apresentação](projects/fotograma-ai.md) |
+| Personal Gateway | Operação privada de conteúdo digital | [Ver apresentação](projects/personal-gateway.md) |
+| Qualifica Leads | Qualificação interna de oportunidades | [Ver apresentação](projects/qualifica-leads.md) |
+| Organizador | Organização pessoal com foco financeiro | [Ver apresentação](projects/organizador.md) |
+| NOIR OS | Sistema operacional pessoal | [Ver apresentação](projects/noir-os.md) |
 
-## O que esta página mostra
+## Princípios de divulgação
 
-A sede 3D, o fluxo projeto, PolicyEngine, Director e agente, as especialidades spec.07, spec.10 e spec.11, o uso experimental do Qwen 2.5 7B (padrão `fake`, sem inferência) e o que já funciona.
+- Não publicamos código proprietário, credenciais, dados reais, configurações internas ou diagramas sensíveis.
+- Funcionalidades implementadas e planejadas são diferenciadas em cada página.
+- Imagens e demonstrações só são incluídas após aprovação explícita.
 
-O Traffic Analyst usa regras sobre CSV. Não usa LLM. Nenhum agente pesquisa a internet sozinho. PostgreSQL 18 e RLS estão em implantação. Meta, Google, OAuth e cofre estão planejados.
-
-## Código
-
-Este repositório é só a apresentação. O código-fonte principal é privado.
-
-Site: https://enzoaguiar13.github.io/growth-headquarters-ai-portfolio/
+Este repositório é a base documental de um futuro site de portfólio.
