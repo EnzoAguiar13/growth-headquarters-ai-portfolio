@@ -21,4 +21,19 @@ Apresentações técnicas de produtos desenvolvidos por **Enzo Aguiar**. Os repo
 - Funcionalidades implementadas e planejadas são diferenciadas em cada página.
 - Imagens e demonstrações só são incluídas após aprovação explícita.
 
-Este repositório é a base documental de um futuro site de portfólio.
+## Site publicado
+
+O [Project Showcase](https://enzoaguiar13.github.io/growth-headquarters-ai-portfolio/) está publicado no GitHub Pages. A página inicial apresenta os oito projetos; cada cartão abre sua apresentação técnica.
+
+## Projeto técnico complementar
+
+[Customer Churn Intelligence](https://github.com/EnzoAguiar13/customer-churn-intelligence) é um projeto público em Python e FastAPI com validação de dataset e preparação reproduzível de dados para machine learning. Na branch principal auditada, treinamento, avaliação e serving permanecem planejados. É uma referência complementar, sem substituir os oito projetos acima.
+
+## Manutenção
+
+- `index.html`: página inicial e cartões dos projetos.
+- `projects/project.html`: visualização das apresentações.
+- `projects/*.md`: conteúdo técnico de cada projeto.
+- Antes de publicar mudanças, conferir os oito cartões, retorno à página inicial e leitura em telas estreitas.
+- Revalidar tecnologias e estado de implementação contra o repositório privado antes de atualizar uma apresentação.
+- Não incluir métricas, screenshots ou demonstrações sem evidência e autorização.
